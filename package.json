@@ -1,0 +1,122 @@
+{
+	"name": "decorators",
+	"version": "1.0.0",
+	"description": "Training with typescript 5 decorators stage 3",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/AudeizReading/typescript-decorators-stage-3.git"
+	},
+	"keywords": [
+		"decorators",
+		"stage3",
+		"typescript",
+		"5"
+	],
+	"author": "AudeizReading",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/AudeizReading/typescript-decorators-stage-3/issues"
+	},
+	"homepage": "https://github.com/AudeizReading/typescript-decorators-stage-3#readme",
+	"scripts": {
+		"install:devDependencies": "npm i --save-dev typescript @types/node ts-node prettier eslint eslint-config-prettier eslint-plugin-import eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser @babel/preset-env @babel/preset-typescript @babel/plugin-proposal-decorators nodemon",
+		"uninstall:devDependencies": "npm uninstall --save-dev typescript @types/node ts-node prettier eslint eslint-config-prettier eslint-plugin-import eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser @babel/preset-env @babel/preset-typescript @babel/plugin-proposal-decorators nodemon",
+		"build": "npx tsc --build",
+		"start": "npm run build && TZ='UTC' node dist/src/index.js",
+		"dev": "TZ='UTC' DEV='1' nodemon src/index.ts",
+		"prettier:check": "prettier . --check .",
+		"prettier:write": "prettier --write .",
+		"eslint": "eslint .",
+		"eslint:fix": "eslint . --fix",
+		"format": "npm run prettier:check || npm run prettier:write && npm run eslint:fix && npm run eslint"
+	},
+	"nodemonConfig": {
+		"ext": ".ts, .js, .yaml"
+	},
+	"babel": {
+		"presets": [
+			[
+				"@babel/preset-env",
+				{
+					"targets": {
+						"node": "current"
+					}
+				}
+			],
+			"@babel/preset-typescript"
+		],
+		"plugins": [
+			[
+				"@babel/plugin-proposal-decorators",
+				{
+					"version": "2023-05"
+				}
+			]
+		]
+	},
+	"prettier": {
+		"tabWidth": 4,
+		"useTabs": true,
+		"semi": true,
+		"singleQuote": true,
+		"trailingComma": "all",
+		"printWidth": 120
+	},
+	"eslintConfig": {
+		"parser": "@typescript-eslint/parser",
+		"extends": [
+			"plugin:@typescript-eslint/recommended",
+			"prettier"
+		],
+		"plugins": [
+			"prettier"
+		],
+		"parserOptions": {
+			"ecmaVersion": 2018,
+			"sourceType": "module"
+		},
+		"ignorePatterns": [
+			"dist",
+			"node_modules",
+			"prettierrc.json",
+			"package*.json",
+			"tsconfig.json",
+			"README.md",
+			"package.json"
+		],
+		"rules": {
+			"@typescript-eslint/explicit-member-accessibility": "error",
+			"@typescript-eslint/interface-name-prefix": "off",
+			"@typescript-eslint/explicit-function-return-type": "error",
+			"@typescript-eslint/explicit-module-boundary-types": "warn",
+			"@typescript-eslint/no-explicit-any": "warn",
+			"max-len": [
+				"error",
+				{
+					"code": 120
+				}
+			],
+			"@typescript-eslint/naming-convention": "error",
+			"@typescript-eslint/no-unused-vars": "error",
+			"@typescript-eslint/no-var-requires": "error",
+			"require-await": "error"
+		}
+	},
+	"devDependencies": {
+		"@babel/plugin-proposal-decorators": "^7.23.7",
+		"@babel/preset-env": "^7.23.8",
+		"@babel/preset-typescript": "^7.23.3",
+		"@types/node": "^20.11.0",
+		"@typescript-eslint/eslint-plugin": "^6.18.1",
+		"@typescript-eslint/parser": "^6.18.1",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-prettier": "^5.1.3",
+		"nodemon": "^3.0.2",
+		"prettier": "^3.2.1",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.3.3"
+	}
+}

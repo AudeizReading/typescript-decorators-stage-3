@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"lib": ["es5", "es6", "dom"],
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"baseUrl": "./src/",
+		"typeRoots": ["./node_modules/@types", "./src/definition"],
+		"resolveJsonModule": true,
+		"outDir": "./dist",
+		"removeComments": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"skipLibCheck": true
+	},
+	"include": ["./src/**/*.ts", "./src/**/*.d.ts", "./src/**/*.tsx"],
+	"exclude": ["node_modules", "./dist", "./logs/*"]
+}
