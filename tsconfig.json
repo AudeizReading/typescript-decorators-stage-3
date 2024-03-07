@@ -2,11 +2,9 @@
 	"compilerOptions": {
 		"target": "es6",
 		"lib": ["es5", "es6", "dom"],
-		"experimentalDecorators": true,
-		"emitDecoratorMetadata": true,
 		"module": "commonjs",
 		"moduleResolution": "node",
-		"baseUrl": "./src/",
+		"baseUrl": "src/",
 		"typeRoots": ["./node_modules/@types", "./src/definition"],
 		"resolveJsonModule": true,
 		"outDir": "./dist",

@@ -20,11 +20,9 @@
 	},
 	"homepage": "https://github.com/AudeizReading/typescript-decorators-stage-3#readme",
 	"scripts": {
-		"install:devDependencies": "npm i --save-dev typescript @types/node ts-node prettier eslint eslint-config-prettier eslint-plugin-import eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser @babel/preset-env @babel/preset-typescript @babel/plugin-proposal-decorators nodemon",
-		"uninstall:devDependencies": "npm uninstall --save-dev typescript @types/node ts-node prettier eslint eslint-config-prettier eslint-plugin-import eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser @babel/preset-env @babel/preset-typescript @babel/plugin-proposal-decorators nodemon",
 		"build": "npx tsc --build",
-		"start": "npm run build && TZ='UTC' node dist/src/index.js",
-		"dev": "TZ='UTC' DEV='1' nodemon src/index.ts",
+		"start": "TZ='UTC' ts-node dist/index.js",
+		"start:dev": "TZ='UTC' DEV='1' nodemon src/index.ts",
 		"prettier:check": "prettier . --check .",
 		"prettier:write": "prettier --write .",
 		"eslint": "eslint .",
@@ -33,27 +31,6 @@
 	},
 	"nodemonConfig": {
 		"ext": ".ts, .js, .yaml"
-	},
-	"babel": {
-		"presets": [
-			[
-				"@babel/preset-env",
-				{
-					"targets": {
-						"node": "current"
-					}
-				}
-			],
-			"@babel/preset-typescript"
-		],
-		"plugins": [
-			[
-				"@babel/plugin-proposal-decorators",
-				{
-					"version": "2023-05"
-				}
-			]
-		]
 	},
 	"prettier": {
 		"tabWidth": 4,
@@ -104,9 +81,6 @@
 		}
 	},
 	"devDependencies": {
-		"@babel/plugin-proposal-decorators": "^7.23.7",
-		"@babel/preset-env": "^7.23.8",
-		"@babel/preset-typescript": "^7.23.3",
 		"@types/node": "^20.11.0",
 		"@typescript-eslint/eslint-plugin": "^6.18.1",
 		"@typescript-eslint/parser": "^6.18.1",
