@@ -1,4 +1,4 @@
-import { logged, loggableClass, loggableMethod } from './decorators';
+import { logged, loggableClass, loggableMethod } from './decorators/decorators';
 
 @loggableClass()
 class Decorated {
